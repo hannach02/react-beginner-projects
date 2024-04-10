@@ -1,6 +1,6 @@
 import React from 'react';
 
-const defaultCurrencies = ['RUB', 'USD', 'EUR', 'GBP'];
+const defaultCurrencies = ['UAH', 'USD', 'EUR', 'GBP'];
 
 export const Block = ({ value, currency, onChangeValue, onChangeCurrency }) => (
   <div className="block">
@@ -22,7 +22,8 @@ export const Block = ({ value, currency, onChangeValue, onChangeCurrency }) => (
     </ul>
     <input
       onChange={(e) => onChangeValue(e.target.value)}
-      value={value}
+      
+      value={isNaN (value) ? 0 : value}
       type="number"
       placeholder={0}
     />
